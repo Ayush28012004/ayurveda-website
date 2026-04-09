@@ -5,7 +5,27 @@
  * ╚══════════════════════════════════════════════════════════════╝
  */
 
+const env = {
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  siteName: process.env.NEXT_PUBLIC_SITE_NAME || "AyurPure",
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@ayurpure.com",
+  googleAnalyticsId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || "",
+  affiliateTrackingId: process.env.NEXT_PUBLIC_AFFILIATE_TRACKING_ID || "",
+};
+
 export const SITE_CONFIG = {
+
+  /* ─────────────────────────────────────────
+      0. ENVIRONMENT VARIABLES
+      (Loaded from .env file)
+   ───────────────────────────────────────── */
+  env: {
+    siteUrl: env.siteUrl,
+    siteName: env.siteName,
+    contactEmail: env.contactEmail,
+    googleAnalyticsId: env.googleAnalyticsId,
+    affiliateTrackingId: env.affiliateTrackingId,
+  },
 
   /* ─────────────────────────────────────────
      1. BRAND & IDENTITY
