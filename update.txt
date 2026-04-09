@@ -1,0 +1,375 @@
+AYURVEDA WEBSITE - ENHANCEMENT CHECKLIST
+=========================================
+
+This file contains all recommended improvements to make the website more professional and animated.
+
+================================================================================
+1. MOBILE MENU (HIGH PRIORITY)
+================================================================================
+File: app/components/MobileMenu.tsx (new)
+Enhance: app/components/Nav.tsx
+
+- Add hamburger icon for mobile (visible below lg breakpoint)
+- Full-screen slide-in overlay menu
+- Staggered link animations on open
+- Close on outside click or Escape key
+- Morph hamburger lines to X on toggle
+
+Expected Impact: High | Difficulty: Medium
+
+================================================================================
+2. BACKGROUND EFFECTS
+================================================================================
+File: app/components/AnimatedBackground.tsx (new)
+
+a) Floating Particles:
+- SVG leaf/botanical icons floating upward
+- Random positions, sizes, and speeds
+- Low opacity (0.1-0.2)
+- Parallax effect on scroll
+
+b) Gradient Orbs:
+- 2-3 large gradient circles
+- Subtle movement on scroll (parallax)
+- Blur effect for soft edges
+
+c) Grain/Noise Overlay:
+- Subtle noise texture (CSS)
+- Very low opacity (0.03-0.05)
+- Adds organic feel
+
+Expected Impact: Medium | Difficulty: Medium
+
+================================================================================
+3. ENHANCED PRODUCT CARD (3D TILT)
+================================================================================
+File: app/components/Products.tsx
+
+- Add useMotionValue for rotateX/rotateY
+- Calculate tilt based on mouse position relative to card center
+- Spring animation for smooth movement
+- Slight scale up on hover (1.02-1.05)
+- Shadow intensifies on hover
+
+Expected Impact: High | Difficulty: Medium
+
+================================================================================
+4. SPLASH SCREEN / LOADING
+================================================================================
+File: app/components/SplashScreen.tsx (new)
+Enhance: app/layout.tsx
+
+- Animated logo entry with fade-out
+- Brand name with letter-by-letter animation
+- Duration: 2-3 seconds
+- Auto-redirect to main content
+
+Expected Impact: High | Difficulty: Medium
+
+================================================================================
+5. CURSOR FOLLOWER
+================================================================================
+File: app/components/CursorFollower.tsx (new)
+
+- Custom dot cursor that follows mouse
+- Trailing circle with delay
+- Scale up on hover over clickable elements
+- Hide on mobile/touch devices
+
+Expected Impact: Medium | Difficulty: Medium
+
+================================================================================
+6. LAZY IMAGE LOADING WITH BLUR
+================================================================================
+File: app/components/LazyImage.tsx (new)
+
+- Low-res placeholder shown first
+- Blur-up effect when loaded
+- Intersection Observer for triggering load
+
+Expected Impact: Low | Difficulty: Medium
+
+================================================================================
+7. FAQ ACCORDION
+================================================================================
+File: app/components/FAQ.tsx (new)
+Add to: app/page.tsx
+
+- Expandable questions
+- Smooth height animation
+- Add to About section or separate section
+
+Expected Impact: Medium | Difficulty: Easy
+
+================================================================================
+8. COUNT-UP ANIMATIONS
+================================================================================
+File: app/components/CountUp.tsx (new)
+
+- For stats (Products count, Clients count)
+- Animate from 0 to value when in viewport
+- Use motion-react animate
+
+Expected Impact: Medium | Difficulty: Easy
+
+================================================================================
+9. PARALLAX EFFECTS
+================================================================================
+Enhance: app/components/About.tsx, app/components/Hero.tsx
+
+- Add subtle parallax to background elements
+- Use motion-react useScroll + useTransform
+- Smooth scrolling effect
+
+Expected Impact: Medium | Difficulty: Medium
+
+================================================================================
+10. SOCIAL PROOF TOAST
+================================================================================
+File: app/components/SocialProofToast.tsx (new)
+
+- "X people are viewing this" popup
+- Or "Recently purchased" notification
+- Subtle popup animation
+- Auto-dismiss after few seconds
+
+Expected Impact: Low | Difficulty: Easy
+
+================================================================================
+11. BEFORE/AFTER COMPARISON
+================================================================================
+File: app/components/BeforeAfter.tsx (new)
+
+- For "before & after" product results
+- Slider to reveal difference
+- Add to Products section
+
+Expected Impact: Medium | Difficulty: Medium
+
+================================================================================
+12. ENHANCED ACCESSIBILITY
+================================================================================
+
+- Add skip to main content link
+- Improve focus visible indicators
+- Add reduced motion support (@media prefers-reduced-motion)
+- Add ARIA labels to all interactive elements
+
+Expected Impact: Medium | Difficulty: Easy
+
+================================================================================
+ALREADY IMPLEMENTED
+================================================================================
+✓ Smooth scroll (globals.css)
+✓ Scroll progress indicator (ScrollProgress.tsx)
+✓ Ripple button effect (RippleButton.tsx)
+✓ Text reveal animations (TextReveal.tsx)
+✓ Theme toggle with smooth transitions
+✓ Product card hover effects
+
+================================================================================
+IMPLEMENTATION PRIORITY
+================================================================================
+
+Priority 1 (Essential):
+- Mobile menu
+- Background effects
+- Enhanced product cards
+
+Priority 2 (High Impact):
+- Splash screen
+- FAQ accordion
+- Count-up animations
+
+Priority 3 (Polish):
+- Cursor follower
+- Lazy image loading
+- Social proof toast
+- Before/After comparison
+
+================================================================================
+NOTES
+================================================================================
+
+- Test all animations on mobile devices
+- Ensure animations don't affect Core Web Vitals
+- Use CSS transforms for GPU acceleration
+- Add reduced-motion support for accessibility
+- Keep animations subtle - Ayurvedic brand should feel calm/organic
+- Don't overdo - too many animations can be overwhelming
+
+================================================================================
+IMPLEMENTED FEATURES
+================================================================================
+
+✓ 1. Mobile Menu - Hamburger with slide-in menu
+✓ 2. Background Effects - Floating particles & gradient orbs
+✓ 3. Enhanced Product Cards - 3D tilt effect
+✓ 4. Splash Screen - Loading animation
+✓ 5. Cursor Follower - Custom cursor effect
+✓ 6. Dark Mode - Full support with proper contrast
+✓ 7. Image Support - Configurable via config.ts
+✓ 8. Section Backgrounds - Distinct colors for each section
+
+================================================================================
+SUGGESTED FUTURE IMPROVEMENTS
+================================================================================
+
+================================================================================
+1. FAQ SECTION
+================================================================================
+Priority: Medium | Difficulty: Medium
+
+Add expandable Q&A section for better SEO and user engagement.
+
+File: app/components/FAQ.tsx (new)
+Add to: app/page.tsx
+
+- Accordion-style expandable questions
+- Smooth height animation
+- Add to About section or separate section
+
+Expected Impact: High for SEO | Adds credibility
+
+================================================================================
+2. COUNT-UP ANIMATIONS
+================================================================================
+Priority: Medium | Difficulty: Easy
+
+Animate the stats numbers (40+, 5K+, 100%) when they scroll into view.
+
+File: app/components/CountUp.tsx (new)
+Enhance: app/components/Hero.tsx
+
+- Use motion-react animate
+- Count from 0 to target value
+- Trigger when in viewport
+
+Expected Impact: Medium | Visual engagement
+
+================================================================================
+3. BEFORE/AFTER IMAGE SLIDER
+================================================================================
+Priority: Low | Difficulty: Medium
+
+Add image comparison slider for product results.
+
+File: app/components/BeforeAfter.tsx (new)
+
+- Slider to reveal before/after images
+- Great for skincare product results
+
+Expected Impact: Medium | Product demonstration
+
+================================================================================
+4. LAZY LOAD IMAGES WITH BLUR-UP
+================================================================================
+Priority: Low | Difficulty: Medium
+
+Add blur-up effect for all images.
+
+File: app/components/LazyImage.tsx (new)
+
+- Low-res placeholder first
+- Blur transition when loaded
+
+Expected Impact: Low | Performance improvement
+
+================================================================================
+5. SOCIAL PROOF TOAST NOTIFICATIONS
+================================================================================
+Priority: Low | Difficulty: Easy
+
+Show recent activity notifications.
+
+File: app/components/SocialProofToast.tsx (new)
+
+- "X people are viewing this"
+- "Recently purchased by Y from Z"
+- Auto-dismiss after few seconds
+
+Expected Impact: Medium | Increases conversions
+
+================================================================================
+6. VIDEO HERO OPTION
+================================================================================
+Priority: Low | Difficulty: Medium
+
+Allow video background in hero section.
+
+Expected Impact: High | Visual impact
+
+================================================================================
+7. ENHANCED ACCESSIBILITY
+================================================================================
+Priority: Medium | Difficulty: Easy
+
+Improve accessibility for all users.
+
+- Add skip to main content link
+- Improve focus visible indicators
+- Add reduced motion support (@media prefers-reduced-motion)
+
+Expected Impact: High | Accessibility compliance
+
+================================================================================
+8. SEO OPTIMIZATION
+================================================================================
+Priority: High | Difficulty: Medium
+
+Improve search engine ranking.
+
+- Add meta tags (title, description, og:tags)
+- Add structured data (JSON-LD)
+- Add sitemap.xml
+- Improve heading hierarchy
+
+Expected Impact: High | Search visibility
+
+================================================================================
+9. PERFORMANCE OPTIMIZATION
+================================================================================
+Priority: Medium | Difficulty: Medium
+
+Improve Core Web Vitals.
+
+- Image optimization with next/image
+- Code splitting if needed
+- Bundle analysis
+
+Expected Impact: High | Page load speed
+
+================================================================================
+10. CONTACT FORM
+================================================================================
+Priority: Medium | Difficulty: Medium
+
+Add proper contact form with validation.
+
+File: app/components/ContactForm.tsx (new)
+
+- Name, email, message fields
+- Form validation
+- Backend integration ready
+
+Expected Impact: Medium | User engagement
+
+================================================================================
+SUGGESTED IMPLEMENTATION ORDER
+================================================================================
+
+Priority 1 (Quick Wins):
+1. SEO Optimization
+2. Count-up Animations
+3. Enhanced Accessibility
+
+Priority 2 (High Impact):
+4. FAQ Section
+5. Contact Form
+
+Priority 3 (Polish):
+6. Before/After Slider
+7. Lazy Load Images
+8. Social Proof Toast
+9. Video Hero Option
+10. Performance Optimization

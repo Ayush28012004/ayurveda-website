@@ -1,0 +1,17 @@
+Affiliate URLs to provide manually (in app/config.ts):
+
+- SITE_CONFIG.products[].affiliateLink (currently #YOUR_AFFILIATE_LINK_HERE)
+
+Optional manual link updates (app/config.ts):
+
+- SITE_CONFIG.nav.links[].href (currently in-page anchors: #products, #about, #practitioner, #contact)
+- SITE_CONFIG.nav.ctaHref (currently #products)
+- SITE_CONFIG.hero.primaryBtn.href (currently #products)
+- SITE_CONFIG.hero.secondaryBtn.href (currently #practitioner)
+
+Steps for final external integration:
+1. Open `app/config.ts`.
+2. Replace all product `affiliateLink` placeholder values with actual store/seller URLs.
+3. Confirm navigation anchors/URLs (if you want external pages, replace the hash links with absolute or route paths).
+4. Optionally, update `SITE_CONFIG.brand` and other copy fields as needed.
+5. Save and test in browser using `npm run dev`.

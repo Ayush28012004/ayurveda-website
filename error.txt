@@ -1,0 +1,20 @@
+REMAINING ISSUES (Excluding affiliate/external link placeholders)
+===============================================================
+
+BIO COMPONENT (app/components/Bio.tsx)
+-------------------------------------
+1. [LOW] Line 33: Key uses b.slice(0, 20) - could cause collision if two bio paragraphs start with identical first 20 characters. Use index or full string as key instead.
+
+MARQUEE COMPONENT (app/components/Marquee.tsx)
+-----------------------------------------------
+2. [MEDIUM] Lines 11-21: Global keydown listener added to window - affects entire page, not just when marquee is focused. Should only activate when marquee section has focus.
+
+NEWSLETTER COMPONENT (app/components/Newsletter.tsx)
+----------------------------------------------------
+3. [LOW] Form shows success message but doesn't persist/store email anywhere - expected for demo but needs backend integration for real functionality.
+
+CSS / STYLING
+-------------
+4. [LOW] No scroll-behavior: smooth CSS for hash navigation - clicking nav links will jump rather than scroll smoothly.
+
+All major bugs have been addressed. Remaining issues are minor improvements.

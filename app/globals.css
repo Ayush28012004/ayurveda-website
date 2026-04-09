@@ -1,26 +1,157 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #ffffff;
+  --color-foreground: #171717;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-cormorant-garamond);
+
+  --color-white: #FAFAF8;
+  --color-offWhite: #F3F1EC;
+  --color-cream: #EDE9E0;
+  --color-creamDark: #E5E0D4;
+  --color-sage: #7A9E7E;
+  --color-sageLight: #A8C5AB;
+  --color-sageDark: #4E7253;
+  --color-sageDarker: #3D5A42;
+  --color-bark: #5C4A3A;
+  --color-barkLight: #8A7060;
+  --color-text: #1C1C1A;
+  --color-textMuted: #6B6560;
+  --color-gold: #B89A5E;
+  --color-goldLight: #D4B98A;
+  --color-border: #E2DDD5;
+  --color-borderDark: #D1C9BC;
+  
+  --section-hero: #ffffff;
+  --section-marquee: #F3F1EC;
+  --section-products: #ffffff;
+  --section-about: #F3F1EC;
+  --section-testimonials: #ffffff;
+  --section-bio: #F3F1EC;
+  --section-newsletter: #5C4A3A;
+  --section-footer: #1C1C1A;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark,
+:root.dark {
+  --background: #0a1f0f;
+  --foreground: #f0f2f0;
+  --color-text: #f0f2f0;
+  --color-textMuted: '#a8c5ab';
+  --color-offWhite: '#1a2f1f';
+  --color-cream: '#2a4f2f';
+  --color-sageDark: '#7ae07a';
+  --color-bark: '#4a5f4f';
+  --color-border: '#3a5f3f';
+  --color-creamDark: '#223d28';
+  
+  --section-hero: #0a1f0f;
+  --section-marquee: '#122918';
+  --section-products: #0a1f0f;
+  --section-about: '#122918';
+  --section-testimonials: '#0a1f0f';
+  --section-bio: '#122918';
+  --section-newsletter: '#1a2f1f';
+  --section-footer: '#060d07';
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body,
+.dark body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+
+/* Custom animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.hero-gradient-circle {
+  background: radial-gradient(circle, #d8e8da 0%, transparent 70%);
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s forwards;
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
