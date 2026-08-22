@@ -34,7 +34,7 @@ export const SITE_CONFIG = {
     name: "Ayush",            // Main brand name (first part)
     nameAccent: "Yadav",          // The accented part of the name (colored differently)
     tagline: "Ancient Wellness, Modern Living",   // Browser tab subtitle
-    description: "Curated Ayurvedic wellness — recommended by a certified practitioner, rooted in ancient science.", // Footer description
+    description: "Curated Ayurvedic wellness recommended by a certified practitioner, rooted in ancient science.", // Footer description
     affiliateDisclosure: "* This website contains affiliate links. When you purchase through our links, we may earn a small commission at no extra cost to you. All products are independently selected and recommended based on genuine belief in their quality and effectiveness. This does not constitute medical advice — please consult a healthcare professional before starting any supplement.",
     copyrightYear: new Date().getFullYear().toString(),
   },
@@ -82,7 +82,7 @@ export const SITE_CONFIG = {
     titleLine1:  "Healing You",
     titleLine2:  "Can Feel,",    // This line is italicised & accented
     titleLine3:  "Naturally.",
-    description: "Curated Ayurvedic formulations by Dr. Ananya Vaidya — blending ancient herbal science with modern wellness for your mind, body, and skin.",
+    description: "Curated Ayurvedic formulations by Dr. Ayush Yadav blending ancient herbal science with modern wellness for your mind, body, and skin.",
     primaryBtn:  { label: "Explore Products", href: "#products" },
     secondaryBtn:{ label: "Meet the Practitioner", href: "#practitioner" },
     stats: [
